@@ -61,6 +61,7 @@ def upload_file():
         vgt_list.append(predicted_class_name)
         vgt_list = list(set(vgt_list))
 
+    print("===============ViT 이미지 분류 결과 ==================" )
     print(vgt_list)
     
     _, buffer = cv2.imencode('.png', img)
