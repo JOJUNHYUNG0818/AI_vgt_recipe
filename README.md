@@ -18,3 +18,5 @@
 
 
 **-- 실행 화면 -- **
+
+![실행순서](https://github.com/JOJUNHYUNG0818/AI_vgt_recipe/assets/152590602/a4017d0c-ad35-49cd-be68-03c581e97d91)
