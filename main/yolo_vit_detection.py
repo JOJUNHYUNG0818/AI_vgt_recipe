@@ -15,15 +15,15 @@ app.config['OUTPUT_FOLDER'] = 'outputs'
 os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
 os.makedirs(app.config['OUTPUT_FOLDER'], exist_ok=True)
 
-# YOLOv8 모델 로드
+# YOLOv8 모델
 yolo_model = YOLO('best.pt')
 
-# ViT 모델과 설정 파일 로드
+# ViT 모델
 model_directory = './model'
 vit_model = ViTForImageClassification.from_pretrained(model_directory)
 feature_extractor = ViTFeatureExtractor.from_pretrained('google/vit-base-patch16-224-in21k')
 
-# 클래스 이름 정의 (모델에 맞게 수정 필요)
+# 클래스 
 class_names = ['Banana', 'Broccoli', 'Cabbage', 'Carrot', 'Cucumber',
                'Garlic', 'Onion', 'Potato', 'Radish', 'Tomato']
 
@@ -54,6 +54,7 @@ def upload_file():
         cropped_image_path = os.path.join(app.config['OUTPUT_FOLDER'], f'cropped_image_{i}.jpg')
         cv2.imwrite(cropped_image_path, cropped_image)
 
+    # 잘라낸 이미지를 ViT로 이미지 분류
     for i in range(len(bounding_boxes)):
         img_path = os.path.join(app.config['OUTPUT_FOLDER'], f'cropped_image_{i}.jpg')
         predicted_class_index, predicted_class_name = classify_image(img_path)
