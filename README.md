@@ -26,7 +26,10 @@
 
 
 
+
+
 ~~~~ 야채 2종류 ~~~~~
+
 
 https://github.com/JOJUNHYUNG0818/AI_vgt_recipe/assets/152590602/9c87b77a-946a-4c7a-81e9-85d3d31e7a33
 
